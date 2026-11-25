@@ -37,7 +37,9 @@ export default function ListPage<T extends { id: number }>({ apiPath, title, ren
                 </Link>
             </li>
             ))}
-        </ul>
+        </ul>}
+        <Pagination page={page} totalPages={data?.totalPages ?? 0} loading = {loading} onChange={(p) => setParams({ page: String(p) })} />
+
         </section>
     );
 }
